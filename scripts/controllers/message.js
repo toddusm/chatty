@@ -10,10 +10,9 @@ angular.module('chattyApp')
     });
     $scope.addMessage = function(newMessage) {
       console.log(newMessage);
-      messages.push(newMessage);
+      // messages.push(newMessage);
       MessageService.addMessage(newMessage).then(function(res){
-        messages = res;
-        $scope.messages = messages;
+        $scope.messages.push(res);
         console.log(res)
       }, function(err){console.log(err)});
     }
