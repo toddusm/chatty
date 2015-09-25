@@ -3,6 +3,12 @@
 </div>
 
 <h4>Latest Chats:</h4>
+<div ng-controller="MessageCtrl">
 <div class="jumbotron">
+  <div ng-repeat="message in messages">{{message.message}}</div>
+</div>
 
+<form ng-submit="addMessage(newMessage)">
+<input type="text" placeholder= "New Message" ng-model="newMessage" />
+</form>
 </div>
